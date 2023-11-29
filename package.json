@@ -2,16 +2,23 @@
   "name": "sqlinjection-node",
   "version": "1.0.0",
   "description": "SQL Injection Module will validate SQL injection.",
-  "main": "index.js",
+  "main": "lib/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "express": "^4.18.2",
     "express-validator": "^6.15.0"
   },
   "keywords": [
     "sqlinjection-node"
   ],
   "author": "hilal",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/express-validator": "^3.0.0",
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.2"
+  }
 }
