@@ -1,0 +1,17 @@
+{
+  "name": "sqlinjection-node",
+  "version": "1.0.0",
+  "description": "SQL Injection Module will validate SQL injection.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express-validator": "^6.15.0"
+  },
+  "keywords": [
+    "sqlinjection-node"
+  ],
+  "author": "hilal",
+  "license": "ISC"
+}
