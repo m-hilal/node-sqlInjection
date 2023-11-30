@@ -2,13 +2,13 @@
   "name": "atom-sqlinjection-node",
   "version": "1.0.0",
   "description": "SQL Injection Module will validate SQL injection.",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc && cp .env ./dist/.env",
     "start": "node .",
     "prestart": "npm run build",
-    "dev": "nodemon lib/index.ts"
+    "dev": "nodemon index.ts"
   },
   "keywords": [],
   "author": "",
