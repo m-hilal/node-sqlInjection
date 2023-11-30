@@ -1,24 +1,26 @@
 {
-  "name": "sqlinjection-node",
+  "name": "typescript",
   "version": "1.0.0",
-  "description": "SQL Injection Module will validate SQL injection.",
-  "main": "lib/index.ts",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc && cp .env ./dist/.env",
+    "start": "node .",
+    "prestart": "npm run build",
+    "dev": "nodemon lib/index.ts"
   },
-  "dependencies": {
-    "express": "^4.18.2",
-    "express-validator": "^6.15.0"
-  },
-  "keywords": [
-    "sqlinjection-node"
-  ],
-  "author": "hilal",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.17.21",
-    "@types/express-validator": "^3.0.0",
-    "@types/node": "^20.10.0",
+    "@types/node": "^20.10.1",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
     "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
   }
 }
