@@ -1,3 +1,3 @@
-import sqlInjectionValidator from "./lib/sqlInjectionValidator";
+import atomValidators from "./lib/atomValidators";
 
-export {sqlInjectionValidator};
+export {atomValidators};
