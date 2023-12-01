@@ -2,10 +2,7 @@
   "name": "atom-sqlinjection-node",
   "version": "1.0.0",
   "description": "SQL Injection Module will validate SQL injection.",
-  "main": "lib/commonjs/index",
-  "module": "lib/module/index",
-  "types": "lib/typescript/index.d.ts",
-  "source": "index",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc && cp .env ./dist/.env",
