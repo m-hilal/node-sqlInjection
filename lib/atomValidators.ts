@@ -1,16 +1,29 @@
-import { Constants } from './Constants/Constants.js';
+import { Constants } from './Constants/Constants';
+import {Request, Response, NextFunction} from "express"
+
 
 export default class atomValidators <T = any>{
 
-    static sqlInjection(req : any){
-        const patterns = [/SELECT/i, /INSERT/i, /UPDATE/i, /DELETE/i, /FROM/i, /WHERE/i];
+    static sqlInjectionFunction(req : Request){
+        const pattern = Constants.CONST_DEFAULT_RESTRICTED_WORDS_IN_PAYLOAD
 
         for (const field in req.body) {
-            if (patterns.some((pattern) => pattern.test(req.body[field]))) {
-                throw new Error(`SQL ERROR: Potential SQL injection detected in '${field}' field`);
+            if (pattern.test(req.body[field])){
+                    throw new Error(`${Constants.CONST_SQL_ERROR_BAD_REQUEST}: ${field}`);
             }
         }
         return true
+    }
+
+
+    static sqlInjectionMiddleware(req : Request, res: Response, next: NextFunction){
+        const pattern = Constants.CONST_DEFAULT_RESTRICTED_WORDS_IN_PAYLOAD
+        for (const field in req.body) {
+            if (pattern.test(req.body[field])){
+                    return res.status(Constants.HTTP_CODE['VALIDATION_FAILED']).json({ message : `${Constants.CONST_SQL_ERROR_BAD_REQUEST}: ${field}`})
+            }
+        }
+        next()
     }
 
 }
